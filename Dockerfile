@@ -16,12 +16,4 @@ RUN unzip awscliv2.zip
 RUN rm awscliv2.zip
 RUN ./aws/install -b /usr/bin
 
-ENV AWS_DEFAULT_REGION=us-east-1
-ENV AWS_DEFAULT_OUTPUT=json
-
-RUN aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-RUN aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-RUN aws configure set default.region $AWS_DEFAULT_REGION
-RUN aws configure set default.output json
-
 RUN npm install --location=global serverless
